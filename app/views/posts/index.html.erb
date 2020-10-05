@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<ul class="list-unstyled">
+  <li class="media d-block">
+    <% @posts.each do |post| %>
+      <img src=<%= post.image_url%> class="mr- 5">
+      <div class="card-body">
+        <h2 class="card-title"><%= post.title%></h2>
+        <h5 class="card-text"><%= post.created_at%></h5>
+        <p class="card-text"><%= post.content%></p>
+      </div>
+      <hr class="bg-dark">
+      <% end %>
+  </li>
+
+  <%= link_to 'New Post', new_post_path %>
